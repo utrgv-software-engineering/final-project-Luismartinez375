@@ -57,3 +57,14 @@ end
 When("I click {string} on a post") do |string|
     click_on string, :match => :first
 end
+Given("I am a user") do
+    @user = create(:user)
+  end
+  
+  When("I go to sign in page") do
+    visit 'users/sign_in'
+  end
+  
+  Then("I should not be able to see the {string} button") do |string|
+    expect(page).not_to have_content(string)
+  end
