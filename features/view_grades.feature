@@ -12,3 +12,4 @@ Feature: View Grades
       Then I should see everyone's grades
       And I click "Show" on a post
       Then I should see that user's detailed grade information
+    

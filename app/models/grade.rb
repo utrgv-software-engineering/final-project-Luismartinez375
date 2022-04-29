@@ -3,7 +3,7 @@ class Grade < ApplicationRecord
     validates_presence_of :student_name
     validates_presence_of :student_grade
     validate :grade_must_be_greater_than_or_equal_to_zero
-
+    validates_length_of :student_id, minimum: 6, maximum: 6, allow_blank: false
     #custom validator
     #makes sure grade is larger than zero
     def grade_must_be_greater_than_or_equal_to_zero
@@ -17,4 +17,6 @@ class Grade < ApplicationRecord
             end
         end
     end
+    
 end
+    

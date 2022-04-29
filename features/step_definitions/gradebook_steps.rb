@@ -68,3 +68,4 @@ Given("I am a user") do
   Then("I should not be able to see the {string} button") do |string|
     expect(page).not_to have_content(string)
   end
+ 
