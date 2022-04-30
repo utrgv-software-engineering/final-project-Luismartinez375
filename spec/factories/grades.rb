@@ -1,6 +1,16 @@
 FactoryBot.define do
   factory :grade do
-    sequence(:student_id){ |n| "#{n}#{n}#{n}#{n}#{n}"}
+    sequence(:student_id) do |n|
+      string=""
+      letters=('A'..'Z').to_a
+      
+      string+=letters[n % letters.length]
+      string+=letters[n%letters.length]
+      string+=letters[n%letters.length]
+      string+=letters[n%letters.length]
+      string+=letters[n%letters.length]
+      string+=letters[n%letters.length]
+      end
     sequence(:student_name) { |n| "Student #{n}" }
 
     trait :valid do
