@@ -6,6 +6,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      ## Create account_id for TA (0) and Teacher (1)
+      t.integer :account_id, null: false, default: 1
 
       ## Recoverable
       t.string   :reset_password_token

@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-teacher = User.create(email: "teacher@teacher.com", password: "default123")
-ta = User.create(email: "ta@ta.com", password: "default123")
+teacher = User.create(email: "teacher@teacher.com", password: "default123", account_id: 1)
+ta = User.create(email: "ta@ta.com", password: "default123", account_id: 0)
 
 g1 = Grade.create(student_id: "102123", student_name: "Andrew Bird", student_grade: 80)
 g2 = Grade.create(student_id: "102124", student_name: "Anderson Silva", student_grade: 90)
