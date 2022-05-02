@@ -15,7 +15,8 @@
           <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
     <% else %>
           <!-- removed 'view gradebooks' button for unsigned in users -->
-          <a href="/users/sign_in">Sign In</a> -
+          <!-- changing 'href' to link_to; Found route using 'bundle exec rake routes' -->
+          <%= link_to "Sign In", new_user_session_path %>
     <% end %>
 
     <% if flash[:error] %>
