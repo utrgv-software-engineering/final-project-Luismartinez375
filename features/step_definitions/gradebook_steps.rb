@@ -68,4 +68,10 @@ Given("I am a user") do
   Then("I should not be able to see the {string} button") do |string|
     expect(page).not_to have_content(string)
   end
- 
+  Then("I should see grades sorted least to greatest") do
+    @grades = Grade.all.order("student_grade").reverse
+  end
+  
+  Then("I should see grades sorted greatest to least") do
+    @grades = Grade.all.order("student_grade")
+  end

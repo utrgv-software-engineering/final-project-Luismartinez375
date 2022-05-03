@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<% @grades = Grade.all %>
-
 <h1>Grades</h1>
-
+<p><strong> Sort by: </strong> <%=link_to "ASC", grades_path(sort: "Asc")%> <%= link_to "DESC", grades_path(sort: "Desc") %> </p>
 <table>
   <thead>
     <tr>
@@ -15,6 +13,7 @@
   </thead>
 
   <tbody>
+
     <% @grades.each do |grade| %>
       <tr>
         <td><%= grade.student_id %></td>
