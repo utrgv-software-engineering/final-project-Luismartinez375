@@ -3,9 +3,17 @@ class GradesController < ApplicationController
 
   # GET /grades
   def index
+    
     if !user_signed_in?
       redirect_to user_session_path
     end
+    if params[:sort] == "Asc"
+      @grades = Grade.all.order("student_grade").reverse
+    elsif params[:sort] == "Desc"
+      @grades = Grade.all.order("student_grade")
+    else
+      @grades = Grade.all
+    end 
   end
 
   # GET /grades/1
@@ -20,6 +28,12 @@ class GradesController < ApplicationController
   # GET /grades/1/edit
   def edit
   end
+
+  def sort
+    @grades = Grade.all.order("student grade")
+
+  end
+    
 
   # POST /grades
   def create
